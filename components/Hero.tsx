@@ -4,18 +4,15 @@ import { motion } from 'framer-motion';
 import jumbotronSeparator from '@/public/img/jumbotron-separator.webp';
 import countdownBg from '@/public/img/countdown-bg.png';
 import separatorLine from '@/public/img/separator-line.svg';
+import img1 from '@/public/photos/img-1.jpeg';
 import Image from 'next/image';
+
 import Countdown from './Countdown';
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full bg-amber-400">
-      <img
-        src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2070&auto=format&fit=crop"
-        alt="Wedding"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-
+    <section className="relative h-screen w-full">
+      <Image src={img1} alt='img-1' loading='eager' className="absolute inset-0 h-full w-full object-cover"/>
       <div className="hero-overlay absolute inset-0" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">

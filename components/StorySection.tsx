@@ -1,16 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import img2 from '@/public/photos/img-2.jpeg';
+import Image from 'next/image';
 
 export default function StorySection() {
   return (
     <section className="grid min-h-screen grid-cols-1 md:grid-cols-2">
       <div className="relative h-125 md:h-auto">
-        <img
-          src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1974&auto=format&fit=crop"
-          alt="Couple"
-          className="h-full w-full object-cover"
-        />
+        <Image src={img2} alt='img-1' loading='eager' className="h-full w-full object-cover"/>
       </div>
 
       <div className="flex items-center justify-center px-8 py-20 md:px-20">

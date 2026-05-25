@@ -5,7 +5,6 @@ import Gallery from '@/components/Gallery';
 import RSVP from '@/components/RSVP';
 import Footer from '@/components/Footer';
 import Instructions from '@/components/Instructions';
-import Music from '@/components/Music';
 import BackgroundMusic from '@/components/BackgroundMusic';
 
 export default function HomePage() {

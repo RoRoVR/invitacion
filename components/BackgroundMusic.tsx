@@ -5,7 +5,7 @@ import { BiPause, BiPlay } from 'react-icons/bi';
 
 export default function BackgroundMusic() {
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
 
     const toggleMusic = async () => {
         if (!audioRef.current) return;
@@ -26,6 +26,18 @@ export default function BackgroundMusic() {
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.volume = 0.15;
+            
+            const attemptPlay = async () => {
+                try {
+                    await audioRef.current?.play();
+                    setIsPlaying(true);
+                } catch (error) {
+                    console.log("Autoplay bloqueado, esperando interacción.");
+                    setIsPlaying(false);
+                }
+            };
+
+            attemptPlay();
         }
     }, []);
 
