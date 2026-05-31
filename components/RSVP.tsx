@@ -34,7 +34,9 @@ export default function RSVP() {
 
   return (
     <section className="bg-[#fffcfa] pt-50 sm:pt-80">
+
       <RSVPModal openModal={openModal} setOpenModal={setOpenModal}/>
+
       <div className="relative mx-auto max-w-3xl text-center z-30 px-4">
         <p className="mb-4 uppercase tracking-[0.4rem]">
           Confirma tu asistencia a la boda

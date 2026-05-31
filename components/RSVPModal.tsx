@@ -1,6 +1,5 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { AiOutlineLoading } from 'react-icons/ai';
 import { FaRegCircleCheck } from 'react-icons/fa6';
@@ -16,25 +15,27 @@ type ResponseGuest = {
 
 type RCVPModalProp = {
   openModal: boolean
-  setOpenModal: Dispatch<SetStateAction<boolean>>
+  setOpenModal: Dispatch<SetStateAction<boolean>>,
+
 }
-export default function RSVPModal({ openModal, setOpenModal }: RCVPModalProp) {
+export default function RSVPModal({ openModal, setOpenModal}: RCVPModalProp) {
+  
+
   const [loadingGuest, setLoadingGuest] = useState(false);
   const [loadingResponse, setLoadingResponse] = useState(false);
   const [guest, setGuest] = useState<ResponseGuest>({ name: "", amount: 0, code: "", res: "" });
-  const searchParams = useSearchParams();
-  const row = searchParams.get("row");
-  const code = searchParams.get("code");
+  const [row, setRow] = useState("");
+  const [code, setCode] = useState("");
 
-  const getGuest = async () => {
+  const getGuest = async (rowParam: string, codeParam: string) => {
     setLoadingGuest(true)
-    if (!row || !code) {
+    if (!rowParam || !codeParam) {
       console.log("No se encontro ROW y CODE");
       return
     }
 
     try {
-      const response = await fetch(`/api/invitation?row=${row}&code=${code}`);
+      const response = await fetch(`/api/invitation?row=${rowParam}&code=${codeParam}`);
       const data: { success: boolean, data: ResponseGuest } = await response.json();
       if (data.success) {
         setGuest({
@@ -72,7 +73,12 @@ export default function RSVPModal({ openModal, setOpenModal }: RCVPModalProp) {
   }
 
   useEffect(() => {
-    getGuest();
+    const params = new URLSearchParams(window.location.search);
+    const row = params.get("row");
+    const code = params.get("code");
+    setRow(row as string);
+    setCode(code as string);
+    if(row && code) getGuest(row, code);
   }, [])
 
   if (!openModal) return null;
