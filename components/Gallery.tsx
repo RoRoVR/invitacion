@@ -6,9 +6,6 @@ export default function Gallery() {
     'photos/gallery/img-4.jpeg',
     'photos/gallery/img-5.jpeg',
     'photos/gallery/img-6.jpeg',
-    'photos/gallery/img-7.jpeg',
-    'photos/gallery/img-8.jpeg',
-    'photos/gallery/img-9.jpeg',
   ];
 
   return (

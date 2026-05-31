@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import jumbotronSeparator from '@/public/img/jumbotron-separator.webp';
 import countdownBg from '@/public/img/countdown-bg.png';
 import separatorLine from '@/public/img/separator-line.svg';
-import img1 from '@/public/photos/img-1.jpeg';
+import img1 from '@/public/photos/port.jpeg';
 import Image from 'next/image';
 
 import Countdown from './Countdown';

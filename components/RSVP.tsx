@@ -10,8 +10,8 @@ import { useState } from "react";
 export default function RSVP() {
   const [openModal, setOpenModal] = useState(false);
 
-  const speechStartDate = '20260815T090000';
-  const speechEndDate = '20260815T100000';
+  const speechStartDate = '20260815T143000';
+  const speechEndDate = '20260815T153000';
 
   const speechCalendarUrl = `
     https://calendar.google.com/calendar/render?action=TEMPLATE
@@ -21,8 +21,8 @@ export default function RSVP() {
     &location=Salón+del+reino+de+los+testigos+de+Jehová
   `.replace(/\s/g, '');
 
-  const partyStartDate = '20260815T180000';
-  const partyEndDate = '20260815T230000';
+  const partyStartDate = '20260815T170000';
+  const partyEndDate = '20260815T220000';
 
   const partyCalendarUrl = `
     https://calendar.google.com/calendar/render?action=TEMPLATE
@@ -61,7 +61,7 @@ export default function RSVP() {
 
             <div>
               <h2 className="font-medium text-3xl mb-2">Día</h2>
-              <p>15 agosto 2026, 9:00 a. m.</p>
+              <p>15 agosto 2026, 02:30 p. m.</p>
             </div>
 
             <div>
@@ -88,7 +88,7 @@ export default function RSVP() {
 
             <div>
               <h2 className="font-medium text-3xl mb-2">Día</h2>
-              <p>15 agosto 2026, 6:00 p. m.</p>
+              <p>15 agosto 2026, 05:00 p. m.</p>
             </div>
 
             <div>
