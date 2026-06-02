@@ -68,7 +68,7 @@ export default function RSVP({ isNotGuest }: RSVPProp) {
 
             <div>
               <h2 className="font-medium text-3xl mb-2">Día</h2>
-              <p>15 agosto 2026, 02:30 p. m.</p>
+              <p>15 agosto 2026, 02:15 p. m.</p>
             </div>
 
             <div>
@@ -133,6 +133,7 @@ export default function RSVP({ isNotGuest }: RSVPProp) {
         </a>
 
         <div className="text-lg text-center mt-4 text-gray-500">
+          <p className="font-bold">Hora de la reunión: <span className="font-normal">14:15 (2:15pm)</span> </p>
           <p className="font-bold">Id de la reunión: <span className="font-normal">819 7446 8044</span> </p>
           <p className="font-bold">Contraseña: <span className="font-normal">boda2026</span></p>
         </div>
