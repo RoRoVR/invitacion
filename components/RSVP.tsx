@@ -6,8 +6,13 @@ import { LuMap } from "react-icons/lu";
 import { CiCalendar } from "react-icons/ci";
 import RSVPModal from "./RSVPModal";
 import { useState } from "react";
+import { TbBrandZoom } from "react-icons/tb";
 
-export default function RSVP() {
+type RSVPProp = {
+  isNotGuest: boolean
+}
+
+export default function RSVP({ isNotGuest }: RSVPProp) {
   const [openModal, setOpenModal] = useState(false);
 
   const speechStartDate = '20260815T143000';
@@ -35,9 +40,9 @@ export default function RSVP() {
   return (
     <section className="bg-[#fffcfa] pt-50 sm:pt-80">
 
-      <RSVPModal openModal={openModal} setOpenModal={setOpenModal}/>
+      <RSVPModal openModal={openModal} setOpenModal={setOpenModal} />
 
-      <div className="relative mx-auto max-w-3xl text-center z-30 px-4">
+      <div className={`${isNotGuest ? "hidden" : ""} relative mx-auto max-w-3xl text-center z-30 px-4`}>
         <p className="mb-4 uppercase tracking-[0.4rem]">
           Confirma tu asistencia a la boda
         </p>
@@ -56,7 +61,7 @@ export default function RSVP() {
         <h2 className="text-gray-500 text-sm mt-2">Pulsa el botón para confirmar o rechazar tu asistencia</h2>
       </div>
 
-      <div className="w-full flex justify-center mt-10 px-4">
+      <div className={`${isNotGuest ? "hidden" : ""} w-full flex justify-center mt-10 px-4`}>
         <div className="w-[90%] flex flex-col md:flex-row gap-10 md:gap-0">
           <div className="w-full md:w-1/2 text-center flex flex-col gap-4 text-xl">
             <h1 className="font-bold text-3xl">Conferencia bíblica</h1>
@@ -77,7 +82,7 @@ export default function RSVP() {
             </div>
 
             <div className="flex flex-col justify-center items-center text-[16px] font-semibold">
-              <a href="https://maps.app.goo.gl/ZjdXcjyNvSmFJfXB6" target="_black" rel="noopener noreferrer" className="bg-[#399179] opacity-80 hover:opacity-100 flex gap-2 items-center text-white py-3 px-5 rounded-full"> <LuMap className="text-xl"/> Ver en mapa</a>
+              <a href="https://maps.app.goo.gl/ZjdXcjyNvSmFJfXB6" target="_black" rel="noopener noreferrer" className="bg-[#399179] opacity-80 hover:opacity-100 flex gap-2 items-center text-white py-3 px-5 rounded-full"> <LuMap className="text-xl" /> Ver en mapa</a>
             </div>
 
             <div className="flex flex-col justify-center items-center text-[16px] font-semibold">
@@ -104,7 +109,7 @@ export default function RSVP() {
             </div>
 
             <div className="flex flex-col justify-center items-center text-[16px] font-semibold">
-              <a href="https://maps.app.goo.gl/9J1rhAvpaAa9GCnx9" target="_black" rel="noopener noreferrer" className="bg-[#399179] opacity-80 hover:opacity-100 flex gap-2 items-center text-white py-3 px-5 rounded-full"> <LuMap className="text-xl"/> Ver en mapa</a>
+              <a href="https://maps.app.goo.gl/9J1rhAvpaAa9GCnx9" target="_black" rel="noopener noreferrer" className="bg-[#399179] opacity-80 hover:opacity-100 flex gap-2 items-center text-white py-3 px-5 rounded-full"> <LuMap className="text-xl" /> Ver en mapa</a>
             </div>
 
             <div className="flex flex-col justify-center items-center text-[16px] font-semibold">
@@ -115,6 +120,25 @@ export default function RSVP() {
 
         </div>
       </div>
+
+      <div className="relative w-full flex flex-col justify-center items-center text-2xl mt-3 z-30">
+        <a
+          href="https://jworg.zoom.us/j/81974468044?pwd=qTBRxcsxHSVx9botgrS2pOkvL7FC50.1"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#0c60c8] flex justify-center items-center text-white px-10 sm:px-16 py-4 rounded-full opacity-80 hover:opacity-100"
+        >
+          <TbBrandZoom className="me-2 text-2xl" />
+          Entrar por ZOOM
+        </a>
+
+        <div className="text-lg text-center mt-4 text-gray-500">
+          <p className="font-bold">Id de la reunión: <span className="font-normal">819 7446 8044</span> </p>
+          <p className="font-bold">Contraseña: <span className="font-normal">boda2026</span></p>
+        </div>
+
+      </div>
+
 
       <div className="w-full">
         <Image src={waveSectionTextTop} alt="waveSectionTextBottom" className="w-full h-auto" />

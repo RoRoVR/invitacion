@@ -84,20 +84,16 @@ export default function RSVPModal({ openModal, setOpenModal}: RCVPModalProp) {
   if (!openModal) return null;
 
   return (
-    <div
-      className=" fixed inset-0 z-100 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
-    >
-      <div
-        className=" relative w-full max-w-lg rounded-4xl bg-[#f8f4ef] p-8 shadow-2xl"
-      >
+    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+      <div className="relative w-full max-w-lg rounded-4xl bg-[#f8f4ef] p-8 shadow-2xl" >
         <button onClick={() => setOpenModal(false)} className=" absolute right-5 top-5 text-gray-500 transition hover:text-black"
         ><IoClose /></button>
-        <div className="text-center">
-          <p className=" mb-3 uppercase tracking-[0.4rem] text-[#b08d57] text-sm">
+        <div className="max-h-[80vh] overflow-y-auto overflow-x-hidden text-center">
+          <p className="mb-3 uppercase tracking-[0.4rem] text-[#b08d57] text-sm">
             Confirmación de asistencia
           </p>
 
-          <h2 className=" font-title text-5xl font-light text-[#2b2b2b] mb-6">
+          <h2 className=" font-title text-3xl sm:text-5xl font-light text-[#2b2b2b] mb-6">
             ¿Nos acompañarán?
           </h2>
 

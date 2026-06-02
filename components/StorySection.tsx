@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import img2 from '@/public/photos/img-3.jpeg';
+import img2 from '@/public/photos/gallery/img-5.png';
 import Image from 'next/image';
 
 export default function StorySection() {
