@@ -24,7 +24,6 @@ export default function Gallery() {
                 alt="Gallery"
                 className="h-125 w-full object-cover transition duration-500 hover:scale-105"
               />
-
             </div>
           ))}
         </div>
