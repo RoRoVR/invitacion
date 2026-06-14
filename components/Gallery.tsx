@@ -2,7 +2,7 @@ export default function Gallery() {
   const images = [
     'photos/gallery/img-1.png',
     'photos/gallery/img-2.png',
-    'photos/gallery/img-3.jpeg',
+    'photos/gallery/img-3.jpg',
     'photos/gallery/img-4.png',
     'photos/gallery/img-5.png',
     'photos/gallery/img-6.png',
