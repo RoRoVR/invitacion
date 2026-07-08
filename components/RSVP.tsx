@@ -9,10 +9,11 @@ import { useState } from "react";
 import { TbBrandZoom } from "react-icons/tb";
 
 type RSVPProp = {
-  isNotGuest: boolean
+  isNotGuest: boolean,
+  nameNotGuest: string
 }
 
-export default function RSVP({ isNotGuest }: RSVPProp) {
+export default function RSVP({ isNotGuest, nameNotGuest }: RSVPProp) {
   const [openModal, setOpenModal] = useState(false);
 
   const speechStartDate = '20260815T143000';
@@ -122,6 +123,12 @@ export default function RSVP({ isNotGuest }: RSVPProp) {
       </div>
 
       <div className="relative w-full flex flex-col justify-center items-center text-2xl mt-3 z-30">
+        {nameNotGuest !== '' &&
+          <div className="flex flex-col my-4 text-center">
+            <p className="text-gray-500 text-xl">Para:</p>
+            <h2 className="text-5xl font-cormorant font-bold">{nameNotGuest}</h2>
+          </div>
+        }
         <a
           href="https://jworg.zoom.us/j/81974468044?pwd=qTBRxcsxHSVx9botgrS2pOkvL7FC50.1"
           target="_blank"

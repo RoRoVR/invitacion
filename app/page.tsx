@@ -12,10 +12,12 @@ import { useEffect, useState } from 'react';
 
 export default function HomePage() {
   const [isNotGuest, setIsNotGuest] = useState(true);
+  const [nameNotGuest, setNameNotGuest] = useState("");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setIsNotGuest((params.get("row") === null) && (params.get("code") === null))
+    setIsNotGuest((params.get("row") === null) && (params.get("code") === null));
+    setNameNotGuest(params.get("name") || "");
   }, [])
 
   return (
@@ -23,7 +25,7 @@ export default function HomePage() {
       <BackgroundMusic />
 
       <Hero />
-      <RSVP isNotGuest={isNotGuest} />
+      <RSVP isNotGuest={isNotGuest} nameNotGuest={nameNotGuest}/>
       <Instructions isNotGuest={isNotGuest} />
       <StorySection />
       <Gallery />
